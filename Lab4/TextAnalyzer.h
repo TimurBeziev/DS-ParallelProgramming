@@ -4,11 +4,14 @@
 #include <utility>
 #include <vector>
 #include <string>
+#include <map>
 
 class TextAnalyzer {
 public:
-    static int
-    GetWordCount(const std::string &file_name, const std::string &target_word);
+    static void
+    AnalyzeText(const std::string &file_name, const std::string &target_word);
+    static void
+    PrintResult();
 };
 
 

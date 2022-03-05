@@ -6,8 +6,7 @@
 class ParallelFirst {
 public:
     static void
-    Run(int threads_num, const std::vector<std::string> &files, std::string word);
+    Run(int th_num, const std::vector<std::string> &files, std::string word);
 };
-
 
 #endif //LAB4_PARALLELFIRST_H
