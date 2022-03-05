@@ -4,8 +4,6 @@
 
 void
 Single::Run(const std::vector<std::string> &files, const std::string &word) {
-    for (const auto &file: files) {
-        TextAnalyzer::AnalyzeText(file, word);
-    }
+    TextAnalyzer::AnalyzeText(files, word);
     TextAnalyzer::PrintResult();
 }

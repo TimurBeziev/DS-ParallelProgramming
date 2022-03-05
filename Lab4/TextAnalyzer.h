@@ -9,7 +9,12 @@
 class TextAnalyzer {
 public:
     static void
-    AnalyzeText(const std::string &file_name, const std::string &target_word);
+    AnalyzeText(const std::vector<std::string> &file_names,
+                const std::string &target_word);
+
+    static void
+    InitializeMap(const std::vector<std::string> &file_names);
+
     static void
     PrintResult();
 };

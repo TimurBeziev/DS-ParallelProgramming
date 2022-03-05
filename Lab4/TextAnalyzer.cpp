@@ -5,8 +5,7 @@
 
 std::map<std::string, int> result_map;
 
-int GetWordCount(const std::string &file_name,
-                 const std::string &target_word) {
+int GetWordCount(const std::string &file_name, const std::string &target_word) {
     std::ifstream fin(file_name);
     std::string word;
     int count = 0;
@@ -19,15 +18,23 @@ int GetWordCount(const std::string &file_name,
     return count;
 }
 
-void TextAnalyzer::AnalyzeText(const std::string &file_name,
+void TextAnalyzer::AnalyzeText(const std::vector<std::string> &file_names,
                                const std::string &target_word) {
-    int count = GetWordCount(file_name, target_word);
-    result_map[file_name] = count;
+    for (const auto &el: file_names) {
+        int count = GetWordCount(el, target_word);
+        result_map[el] = count;
+    }
 }
 
 void TextAnalyzer::PrintResult() {
-    for (const auto & el: result_map) {
+    for (const auto &el: result_map) {
         std::cout << el.first << "\t" << el.second << "\n";
+    }
+}
+
+void TextAnalyzer::InitializeMap(const std::vector<std::string> &file_names) {
+    for (const auto &el: file_names) {
+        result_map[el] = 0;
     }
 }
 
