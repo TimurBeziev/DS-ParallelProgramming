@@ -4,6 +4,7 @@
 
 void
 Single::Run(const std::vector<std::string> &files, const std::string &word) {
-    TextAnalyzer::AnalyzeText(files, word);
-    TextAnalyzer::PrintResult();
+    TextAnalyzer textAnalyzer(files, word);
+    textAnalyzer.InitializeMap();
+    textAnalyzer.AnalyzeText(files, word);
 }

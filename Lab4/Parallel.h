@@ -5,7 +5,7 @@
 
 class Parallel {
 public:
-    static void
+    void
     Run(const std::vector<std::string> &files, std::string word, int th_num);
 };
 

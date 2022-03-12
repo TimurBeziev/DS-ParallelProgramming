@@ -4,9 +4,8 @@
 #include <utility>
 #include <vector>
 #include <filesystem>
-#include "ParallelFirst.h"
-#include "Parallel.h"
 #include "Single.h"
+#include "Parallel.h"
 
 void GetFiles(std::vector<std::string> *file_names) {
     std::string path = "../TestSample/";
@@ -16,10 +15,12 @@ void GetFiles(std::vector<std::string> *file_names) {
 }
 
 int main() {
-//    int n = 20;
+    int n = 20;
     std::vector<std::string> file_names;
     GetFiles(&file_names);
-//    Parallel::Run(file_names, "vitae", n);
-    Single::Run(file_names, "apple");
+    Parallel parallel;
+    parallel.Run(file_names, "vitae", n);
+//    Single single;
+//    single.Run(file_names, "apple");
     return 0;
 }

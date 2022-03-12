@@ -5,7 +5,7 @@
 
 class Single {
 public:
-    static void
+    void
     Run(const std::vector<std::string> &files, const std::string &word);
 };
 

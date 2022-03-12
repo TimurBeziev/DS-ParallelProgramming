@@ -8,15 +8,26 @@
 
 class TextAnalyzer {
 public:
-    static void
+    TextAnalyzer(const std::vector<std::string> &file_names,
+                 const std::string &target_word);
+
+    void
     AnalyzeText(const std::vector<std::string> &file_names,
                 const std::string &target_word);
 
-    static void
-    InitializeMap(const std::vector<std::string> &file_names);
+    void
+    InitializeMap();
 
-    static void
+    void
     PrintResult();
+
+private:
+    int
+    GetWordCount(const std::string &file_name, const std::string &target_word);
+
+    std::vector<std::string> file_names_;
+    std::string target_word_;
+    std::map<std::string, int> result_map_;
 };
 
 
